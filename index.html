@@ -80,17 +80,20 @@ footer {
 <h1>Политика конфиденциальности Pill Tracker</h1>
 <p><strong>Дата вступления в силу:</strong> 2026-08-20<br><strong>Оператор:</strong> Аббос Октамбаев (индивидуальный разработчик)<br><strong>Контакт:</strong> <a href="mailto:zoir3201@gmail.com">zoir3201@gmail.com</a></p>
 <h2>1. Кратко</h2>
-<p>Pill Tracker — приложение-напоминание о приёме лекарств и учёте воды. Мы не показываем рекламу, не продаём данные и не передаём их брокерам данных. Приложение работает и без регистрации: в этом режиме данные не покидают устройство.</p>
+<p>Pill Tracker — приложение-напоминание о приёме лекарств и учёте воды. Мы не показываем рекламу, не продаём данные и не передаём их брокерам данных. Регистрация не нужна: приложение работает сразу. Чтобы записи не терялись, они синхронизируются с облаком с первого запуска — под анонимным идентификатором, без имени и адреса почты. Вход через Apple или Google связывает эти данные с вашей учётной записью, чтобы они пережили переустановку приложения и смену устройства.</p>
 <h2>2. Какие данные мы обрабатываем</h2>
 <p><strong>Вы вводите сами:</strong></p>
 <ul><li>Имя, которое вы указали при первом запуске.</li><li>Названия лекарств, дозировки, форма выпуска, расписание и длительность курса.</li><li>Отметки о приёме и пропуске.</li><li>Записи о выпитой воде.</li></ul>
+<p><strong>Появляется автоматически:</strong></p>
+<ul><li>Внутренний идентификатор пользователя (UID), который Firebase Authentication присваивает при первом запуске. До входа в аккаунт он анонимный: это случайная строка, не связанная ни с вашим именем, ни с почтой, ни с номером телефона.</li></ul>
 <p><strong>Появляется при входе в аккаунт (необязательно):</strong></p>
-<ul><li>Адрес электронной почты и имя из вашего профиля Apple или Google.</li><li>Внутренний идентификатор пользователя (UID), который присваивает Firebase Authentication.</li></ul>
+<ul><li>Адрес электронной почты и имя из вашего профиля Apple или Google.</li></ul>
 <p><strong>Мы НЕ собираем:</strong> геолокацию, список контактов, историю браузера, рекламные идентификаторы, данные из Apple Health, аналитику поведения.</p>
 <h2>3. Зачем это нужно</h2>
 <p>Единственная цель — работа самого приложения: показывать расписание, вовремя присылать напоминания и синхронизировать список между вашими устройствами. Для рекламы, профилирования или отслеживания данные не используются.</p>
 <h2>4. Где данные хранятся</h2>
-<ul><li><strong>Без входа в аккаунт:</strong> только на вашем устройстве. Ничего никуда не отправляется.</li><li><strong>После входа через Apple или Google:</strong> данные дополнительно синхронизируются с Google Cloud Firestore в раздел, доступный только владельцу этого аккаунта. Правила доступа проверяют совпадение идентификатора пользователя, поэтому чужие записи прочитать нельзя.</li></ul>
+<ul><li><strong>До входа в аккаунт:</strong> данные хранятся на устройстве и синхронизируются с Google Cloud Firestore под анонимным идентификатором. Кто вы — мы не знаем: ни имени, ни почты, ни телефона в этот момент у нас нет.</li><li><strong>После входа через Apple или Google:</strong> к тем же данным добавляются имя и адрес почты из вашего профиля, и записи закрепляются за учётной записью.</li></ul>
+<p>В обоих случаях раздел доступен только владельцу идентификатора: правила Firestore проверяют его совпадение, поэтому чужие записи прочитать нельзя.</p>
 <p>Поставщик облачной инфраструктуры — Google (Firebase Authentication и Cloud Firestore). Google выступает обработчиком данных по нашему поручению; условия описаны в политике конфиденциальности Google.</p>
 <h2>5. Уведомления</h2>
 <p>Напоминания формируются локально на устройстве средствами iOS. Их содержание на сервер не передаётся. Разрешение на уведомления запрашивается отдельно, и приложение работает даже если вы откажете — вы просто не получите напоминаний.</p>
@@ -115,15 +118,16 @@ footer {
 <h1>Pill Tracker Privacy Policy</h1>
 <p><strong>Effective date:</strong> 2026-08-20<br><strong>Operator:</strong> Abbos Oktambayev (individual developer)<br><strong>Contact:</strong> <a href="mailto:zoir3201@gmail.com">zoir3201@gmail.com</a></p>
 <h2>1. Summary</h2>
-<p>Pill Tracker is a medication reminder and water intake app. We show no ads, sell no data, and share nothing with data brokers. The app works without an account; in that mode your data never leaves the device.</p>
+<p>Pill Tracker is a medication reminder and water intake app. We show no ads, sell no data, and share nothing with data brokers. No sign-up is required. So that your records are not lost, they sync to the cloud from first launch under an anonymous identifier that carries no name or email address. Signing in with Apple or Google ties those records to your account so they survive a reinstall or a new device.</p>
 <h2>2. Data we process</h2>
 <p><strong>You enter it yourself:</strong> your name, medication names, doses, forms, schedules, course length, taken/skipped marks, and water log entries.</p>
-<p><strong>Added when you sign in (optional):</strong> email address and name from your Apple or Google profile, plus the internal user identifier issued by Firebase Authentication.</p>
+<p><strong>Added automatically:</strong> the internal user identifier issued by Firebase Authentication on first launch. Before you sign in it is anonymous — a random string tied to no name, email, or phone number.</p>
+<p><strong>Added when you sign in (optional):</strong> email address and name from your Apple or Google profile.</p>
 <p><strong>We do NOT collect:</strong> location, contacts, browsing history, advertising identifiers, Apple Health data, or behavioural analytics.</p>
 <h2>3. Why</h2>
 <p>Solely to run the app: show your schedule, deliver reminders on time, and sync your list across your devices. Never for advertising, profiling, or tracking.</p>
 <h2>4. Where data is stored</h2>
-<p>Without an account, data stays on your device only. After signing in with Apple or Google, it also syncs to Google Cloud Firestore into an area only that account can reach; security rules match the user identifier, so no one else can read your records. Google (Firebase Authentication and Cloud Firestore) acts as our data processor.</p>
+<p>Before you sign in, data is kept on your device and synced to Google Cloud Firestore under an anonymous identifier — we hold no name, email, or phone number at that point. After signing in with Apple or Google, your name and email are added and the records are tied to that account. In both cases the area is reachable only by the owner of the identifier: security rules match it, so no one else can read your records. Google (Firebase Authentication and Cloud Firestore) acts as our data processor.</p>
 <h2>5. Notifications</h2>
 <p>Reminders are built locally by iOS. Their contents are never sent to a server. The app works even if you decline the notification permission.</p>
 <h2>6. Home screen widgets</h2>
